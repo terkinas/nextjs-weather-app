@@ -23,7 +23,7 @@ A user-friendly weather app providing real-time forecasts for any location. It l
 To run the Weather App locally, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/terkinas/nextjs-weather-app.git`
-1. Navigate to the project directory: `cd weather-app`
+1. Navigate to the project directory: `cd nextjs-weather-app`
 1. Install the dependencies: `npm install`
 1. Obtain API keys from OpenWeatherMap and Google Maps and replace them in the respective configuration files.
 1. Start the development server: `npm run dev`
