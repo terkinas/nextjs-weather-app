@@ -1,8 +1,5 @@
 # nextjs-weather-app
-A user-friendly weather app providing real-time forecasts for any location.
-
-# Weather App
-This Weather App is a simple and user-friendly application that provides real-time weather information for any location around the world. It leverages the power of APIs to fetch accurate and up-to-date weather data and presents it in an intuitive and visually appealing manner.
+A user-friendly weather app providing real-time forecasts for any location. It leverages the power of APIs to fetch accurate and up-to-date weather data and presents it in an intuitive and visually appealing manner.
 
 ## Features
 * Current Weather: Get the current temperature, humidity, wind speed, and other essential weather parameters for your desired location.
@@ -25,11 +22,11 @@ This Weather App is a simple and user-friendly application that provides real-ti
 ## Installation
 To run the Weather App locally, follow these steps:
 
-1. Clone the repository: git clone https://github.com/your-username/weather-app.git
-1. Navigate to the project directory: cd weather-app
-1. Install the dependencies: npm install
+1. Clone the repository: `git clone https://github.com/terkinas/nextjs-weather-app.git`
+1. Navigate to the project directory: `cd weather-app`
+1. Install the dependencies: `npm install`
 1. Obtain API keys from OpenWeatherMap and Google Maps and replace them in the respective configuration files.
-1. Start the development server: npm start
+1. Start the development server: `npm run dev`
 1. Open your browser and visit: http://localhost:3000
 
 ## Screenshots
@@ -43,4 +40,4 @@ Will be uploaded soon
 Contributions to the Weather App are welcome! If you find any bugs or have suggestions for new features, please open an issue on the GitHub repository. You can also fork the repository, make your changes, and submit a pull request.
 
 ## License
-This project is licensed under the MIT License, allowing for personal and commercial use with attribution.
+This project is licensed under the `MIT License`, allowing for personal and commercial use with attribution.
