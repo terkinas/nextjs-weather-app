@@ -9,7 +9,8 @@ import {
   } from "@/components/ui/dialog"
 import Link from "next/link"
 
-  import { FiMoreHorizontal } from "react-icons/fi"
+  import { FiMoreHorizontal, FiGithub, FiMail } from "react-icons/fi"
+import SiteFooter from "../site-footer"
 
 type Props = {}
 
@@ -24,10 +25,10 @@ const LinksModal = (props: Props) => {
     <DialogContent className="w-11/12 sm:w-full rounded">
       <DialogHeader>
         <DialogTitle>Information</DialogTitle>
-        <DialogDescription className="flex flex-col gap-1">
-          <p className="text-xs">Open-source project in development. Contribute and improve it!</p> <br />
-          <Link className="block p-2 border border-1 border-slate-300 rounded" href="https://github.com/terkinas/nextjs-weather-app"> Github </Link>
-          <Link className="block p-2 border border-1 border-slate-300 rounded" href="/contact"> Contact </Link>
+        <DialogDescription className="flex flex-col gap-3">
+          <p className="text-xs">Open-source project in development. Contribute and improve it!</p>
+          <Link className=" p-2 border border-1 border-slate-300 rounded flex items-center justify-center gap-2" href="https://github.com/terkinas/nextjs-weather-app"><FiGithub /> Github </Link>
+          <Link className=" p-2 border border-1 border-slate-300 rounded flex items-center justify-center gap-2" href="/contact"><FiMail /> Contact </Link>
           
         </DialogDescription>
       </DialogHeader>

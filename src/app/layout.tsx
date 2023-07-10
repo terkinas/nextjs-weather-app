@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import SiteHeader from '@/components/site-header'
+import SiteFooter from '@/components/site-footer'
 
 
 const poppins = Poppins({ weight: ['400', '600', '700'], subsets: ['latin'], })
