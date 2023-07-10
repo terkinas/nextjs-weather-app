@@ -2,22 +2,22 @@
 A user-friendly weather app providing real-time forecasts for any location. It leverages the power of APIs to fetch accurate and up-to-date weather data and presents it in an intuitive and visually appealing manner.
 
 ## Features
-* Current Weather: Get the current temperature, humidity, wind speed, and other essential weather parameters for your desired location.
-* Forecast: View the weather forecast for the upcoming days, including temperature highs and lows, precipitation chances, and atmospheric conditions.
-* Search: Easily search for weather information of any city or town worldwide by name or zip code.
-* Geolocation: The app utilizes geolocation services to automatically detect and display weather data for the user's current location.
-* Favorites: Save your frequently accessed locations as favorites for quick access to their weather information.
-* Unit Conversion: Choose between metric (Celsius, kilometers per hour) and imperial (Fahrenheit, miles per hour) units for displaying weather data.
-* Weather Alerts: Receive alerts and notifications for severe weather conditions, such as storms, hurricanes, or extreme temperatures.
-* Interactive Maps: Explore weather patterns and radar data through interactive maps, giving you a visual representation of the current weather conditions.
-* Responsive Design: The app is designed to be mobile-friendly and responsive, ensuring a seamless user experience across different devices and screen sizes.
+* **Current Weather:** Get the current temperature, humidity, wind speed, and other essential weather parameters for your desired location.
+* **Forecast:** View the weather forecast for the upcoming days, including temperature highs and lows, precipitation chances, and atmospheric conditions.
+* **Search:** Easily search for weather information of any city or town worldwide by name or zip code.
+* **Geolocation:** The app utilizes geolocation services to automatically detect and display weather data for the user's current location.
+* **Favorites:** Save your frequently accessed locations as favorites for quick access to their weather information.
+* **Unit Conversion:** Choose between metric (Celsius, kilometers per hour) and imperial (Fahrenheit, miles per hour) units for displaying weather data.
+* **Weather Alerts:** Receive alerts and notifications for severe weather conditions, such as storms, hurricanes, or extreme temperatures.
+* **Interactive Maps:** Explore weather patterns and radar data through interactive maps, giving you a visual representation of the current weather conditions.
+* **Responsive Design:** The app is designed to be mobile-friendly and responsive, ensuring a seamless user experience across different devices and screen sizes.
 
 ## Technologies Used
-* Front-end: HTML, CSS, JavaScript
-* Backend: Node.js, Express.js
-* APIs: OpenWeatherMap API, Google Maps API (for geolocation)
-* Data Visualization: Chart.js, Leaflet.js
-* Deployment: GitHub Pages
+* **Front-end:** HTML, CSS, JavaScript
+* **Backend:** Node.js, Express.js
+* **APIs:** OpenWeatherMap API, Google Maps API (for geolocation)
+* **Data Visualization:** Chart.js, Leaflet.js
+* **Deployment:** GitHub Pages
 
 ## Installation
 To run the Weather App locally, follow these steps:
