@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={poppins.className + " md:bg-blue-500"}>
+      <body className={poppins.className + " bg-blue-500"}>
         <SiteHeader />
         {children}
         </body>

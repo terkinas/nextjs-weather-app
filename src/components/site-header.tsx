@@ -4,7 +4,7 @@ import LinksModal from "./modals/links-modal"
 
 function SiteHeader() {
   return (
-    <header className="w-full flex justify-between p-4 py-8 text-white bg-blue-500 max-w-7xl mx-auto">
+    <header className="w-full flex justify-between p-4 py-8 text-white  max-w-7xl mx-auto z-30">
 
         <div>
             <h4 className="font-semibold">Semarang</h4>

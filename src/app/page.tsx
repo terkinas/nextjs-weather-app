@@ -18,7 +18,7 @@ export default function Home() {
   // console.log(data);
   console.log(process.env.OPEN_WEATHER_API_KEY)
   return (
-    <main className="flex flex-col items-center justify-between pt-12 z-0 bg-blue-500
+    <main className="flex flex-col items-center justify-between pt-12 z-0
     md:grid md:grid-cols-3 max-w-7xl mx-auto">
       {/* weather representation */}
       <div className='flex flex-col px-4 sticky top-0 z-10 '>
@@ -75,7 +75,7 @@ export default function Home() {
           </div>
       </div>
 
-      <Image src={'/images/earth-illustration.png'}  width={400} height={400} alt="earth illustration" className='w-screen h-screen object-contain top-0 left-0 z-0 opacity-10 fixed scale-125' />
+      <Image src={'/images/earth-illustration.png'}  width={400} height={400} alt="earth illustration" className='w-screen h-screen object-contain top-0 left-0 -z-10 opacity-10 fixed scale-125' />
 
     </main>
   )
