@@ -18,23 +18,26 @@ export default function Home() {
   // console.log(data);
   console.log(process.env.OPEN_WEATHER_API_KEY)
   return (
-    <main className="flex flex-col items-center justify-between pt-12 z-0">
+    <main className="flex flex-col items-center justify-between pt-12 z-0 bg-blue-500
+    md:grid md:grid-cols-3 max-w-7xl mx-auto">
       {/* weather representation */}
-      <div className='flex flex-col px-4 sticky top-0'>
+      <div className='flex flex-col px-4 sticky top-0 z-10 '>
           <Image src='/images/island-normal.png' width={400} height={400} alt='weather-image' />
           <div>
-            <h4 className='font-semibold text-white text-7xl flex'>32<span className='text-5xl'>°</span></h4>
-            <p className='text-sm text-slate-200'>Rainy</p>
+            <h4 className='font-semibold text-white text-7xl flex md:text-9xl'>32<span className='text-5xl'>°</span></h4>
+            <p className='text-sm text-slate-200 md:text-base'>Rainy</p>
           </div>
       </div>
 
-      <div className='w-6 h-6 bg-white shadow-lg rounded-full translate-y-1/2 z-20 opacity-90'>
+      <div className='w-6 h-6 bg-white shadow-lg rounded-full translate-y-1/2 z-20 opacity-90
+      md:hidden'>
         <div className='w-12 h-12 bg-white shadow-lg rounded-full z-10 -translate-x-1/4 -translate-y-1/4 opacity-50'></div>
       </div>
 
       {/* weather table */}
-      <div className="z-10 w-full flex flex-col items-center justify-center pt-8 bg-white">
-        <div className="w-full text-slate-800 px-4">
+      <div className="z-30 w-full flex flex-col items-center justify-center pt-8 bg-white md:bg-transparent 
+      md:px-6 md:rounded-lg md:flex-row md:col-span-2 md:items-start md:gap-3 ">
+        <div className="w-full text-slate-800 px-4 md:bg-white md:p-4 md:rounded-lg md:shadow-lg">
           <h4 className='font-semibold text-lg'>Weather now</h4>
           <div className="grid grid-cols-2 gap-6 w-full py-4 pt-5">
             {dataExample.map((item, index) => (
@@ -49,9 +52,9 @@ export default function Home() {
           </div>
         </div>
 
-        <hr className='w-full my-6' />
+        <hr className='w-full my-6 md:hidden' />
 
-        <div className="w-full text-slate-800 pb-12 relative">
+        <div className="w-full text-slate-800 pb-12 relative md:bg-white px-4 md:p-4 md:rounded-lg md:shadow-lg">
 
           <div className='flex justify-between px-4'>
             <h4 className='font-semibold text-lg'>Prediction</h4>
@@ -68,9 +71,11 @@ export default function Home() {
             </div>
 
             {/* fade out effect */}
-              <div className='w-full h-full bg-gradient-to-t from-white to-transparent absolute bottom-0'></div>
+              <div className='w-full h-full bg-gradient-to-t from-white to-transparent absolute bottom-0 hidden'></div>
           </div>
       </div>
+
+      <Image src={'/images/earth-illustration.png'}  width={400} height={400} alt="earth illustration" className='w-screen h-screen object-contain top-0 left-0 z-0 opacity-10 fixed scale-125' />
 
     </main>
   )
