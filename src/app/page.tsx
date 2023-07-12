@@ -53,12 +53,12 @@ const weatherNowIcons = [
 ]
 
 const WeatherIcons: any = {
-  'Thunderstorm': <FiCloudLightning />,
-  'Drizzle': <RiFoggyLine />,
-  'Rain': <FiCloudRain />,
-  'Snow': <FiCloudSnow />,
-  'Clear': <FiSun />,
-  'Clouds': <FiCloud />,
+  Thunderstorm: <FiCloudLightning />,
+  Drizzle: <RiFoggyLine />,
+  Rain: <FiCloudRain />,
+  Snow: <FiCloudSnow />,
+  Clear: <FiSun />,
+  Clouds: <FiCloud />,
 }
 
 const weekDay = new Date();
