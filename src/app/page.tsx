@@ -3,8 +3,8 @@
 import Image from 'next/image'
 import getCurrentWeather from '@/lib/getCurrentWeather';
 import ClientConsoleLog from '@/components/client-console-log';
-import { FiUmbrella, FiChevronDown, FiWind, FiSun, FiDroplet, FiCloudRain } from 'react-icons/fi';
-import { RiCelsiusLine, RiCelsiusFill } from 'react-icons/ri';
+import { FiUmbrella, FiChevronDown, FiWind, FiSun, FiDroplet, FiCloudSnow, FiCloud, FiCloudLightning, FiCloudRain } from 'react-icons/fi';
+import { RiCelsiusFill, RiFoggyLine } from 'react-icons/ri';
 import { isNumber } from '@/lib/utils';
 
 const dataExample = [
@@ -52,6 +52,15 @@ const weatherNowIcons = [
   <FiSun />,
 ]
 
+const WeatherIcons: any = {
+  'Thunderstorm': <FiCloudLightning />,
+  'Drizzle': <RiFoggyLine />,
+  'Rain': <FiCloudRain />,
+  'Snow': <FiCloudSnow />,
+  'Clear': <FiSun />,
+  'Clouds': <FiCloud />,
+}
+
 const weekDay = new Date();
 const weekDayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const weekDayName = weekDayNames[weekDay.getDay()];
@@ -68,7 +77,8 @@ export default async function Home() {
       {/*  */}
       { weatherData && <ClientConsoleLog weatherData={weatherData} /> }
       {/* weather representation */}
-      <div className='flex flex-col px-4 sticky top-0 z-10 '>
+      <div className='flex flex-col px-4 sticky top-0 z-10'>
+          <div className='absolute text-9xl text-white'> {WeatherIcons[`${weatherData.props.data.daily[0].weather[0].main}`]} </div>
           <Image className='animate-[floating_3s_ease-in-out_infinite]' src='/images/island-normal.png' width={400} height={400} alt='weather-image' />
           <div>
             <h4 className='font-semibold text-white text-7xl flex md:text-9xl'>{Math.round(weatherData.props.data.current.temp)}<span className='text-5xl'>°</span></h4>
@@ -85,7 +95,7 @@ export default async function Home() {
       <div className="z-30 w-full flex flex-col items-center justify-center pt-8 bg-white md:bg-transparent 
       md:px-6 md:rounded-lg md:flex-row md:col-span-2 md:items-start md:gap-3 ">
         <div className="w-full text-slate-800 px-4 md:bg-white md:p-4 md:rounded-lg md:shadow-lg">
-          <h4 className='font-semibold text-lg'>Weather now</h4>
+          <h4 className='font-semibold text-lg px-2'>Weather now</h4>
           <div className="grid grid-cols-2 gap-6 w-full py-4 pt-5">
             {dataExample.map((item, index) => (
               <div key={index} className="flex gap-2 items-center">
@@ -103,7 +113,7 @@ export default async function Home() {
 
         <div className="w-full text-slate-800 pb-12 relative md:bg-white px-4 md:p-4 md:rounded-lg md:shadow-lg">
 
-          <div className='flex justify-between px-4'>
+          <div className='flex justify-between px-2'>
             <h4 className='font-semibold text-lg'>Prediction</h4>
             <h5 className='text-base text-slate-400 flex items-center gap-1'>Weekly <FiChevronDown size={12} /></h5>
           </div>
@@ -113,7 +123,7 @@ export default async function Home() {
                   <h4 className=''>{ weekDay.getDay() + index < 6 ? 
                   (index == 0 ? 'Today' : (index == 1 ? 'Tomorrow' : (weekDayNames[weekDay.getDay() + 2]) )) : (weekDayNames[weekDay.getDay() + index - 6])}</h4>
                   <h5 className='col-span-2 text-right'>{Math.round(weatherData.props.data.daily[index].temp.day)}<sup>°</sup></h5>
-                  <p>{weatherData.props.data.daily[index].weather[0].main}</p>
+                  <p>{WeatherIcons[`${weatherData.props.data.daily[index].weather[0].main}`]} {weatherData.props.data.daily[index].weather[0].main}</p>
                 </div>
             ))}
             </div>
