@@ -7,41 +7,41 @@ import { FiUmbrella, FiChevronDown, FiWind, FiSun, FiDroplet, FiCloudSnow, FiClo
 import { RiCelsiusFill, RiFoggyLine } from 'react-icons/ri';
 import { isNumber } from '@/lib/utils';
 
-const dataExample = [
-  'feel',
-  'humidity',
-  'pressure',
-  'temp',
-  'temp_max',
-  'temp_min',
-]
+// const dataExample = [
+//   'feel',
+//   'humidity',
+//   'pressure',
+//   'temp',
+//   'temp_max',
+//   'temp_min',
+// ]
 
-const weatherNow = [
-  'Feel like',
-  'Wind',
-  'Precipitation',
-  'Humidity',
-  'Chance of rain',
-  'UV Index',
-]
+// const weatherNow = [
+//   'Feel like',
+//   'Wind',
+//   'Precipitation',
+//   'Humidity',
+//   'Chance of rain',
+//   'UV Index',
+// ]
 
-const weatherNowData = [
-  'feels_like',
-  'wind_speed',
-  'dew_point',
-  'humidity',
-  'clouds',
-  'uvi'
-]
+// const weatherNowData = [
+//   'feels_like',
+//   'wind_speed',
+//   'dew_point',
+//   'humidity',
+//   'clouds',
+//   'uvi'
+// ]
 
-const weatherNowSymbols = [
-  '°',
-  ' km/h',
-  '%',
-  '%',
-  '%',
-  '/10'
-]
+// const weatherNowSymbols = [
+//   '°',
+//   ' km/h',
+//   '%',
+//   '%',
+//   '%',
+//   '/10'
+// ]
 
 // const weatherNowIcons: any = [
 //   {key: 1, icon: <RiCelsiusFill />},
@@ -61,9 +61,9 @@ const weatherNowSymbols = [
 //   Clouds: <FiCloud />,
 // }
 
-const weekDay = new Date();
-const weekDayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-const weekDayName = weekDayNames[weekDay.getDay()];
+// const weekDay = new Date();
+// const weekDayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+// const weekDayName = weekDayNames[weekDay.getDay()];
 
 export default async function Home() {
   const weatherData = await getCurrentWeather();
@@ -79,10 +79,10 @@ export default async function Home() {
       {/* weather representation */}
       <div className='flex flex-col px-4 sticky top-0 z-10'>
           {/* <div className='absolute text-9xl text-white'> {WeatherIcons[`${weatherData.props.data.daily[0].weather[0].main}`]} </div> */}
-          <Image className='animate-[floating_3s_ease-in-out_infinite]' src='/images/island-normal.png' width={400} height={400} alt='weather-image' />
+          {/* <Image className='animate-[floating_3s_ease-in-out_infinite]' src='/images/island-normal.png' width={400} height={400} alt='weather-image' /> */}
           <div>
-            <h4 className='font-semibold text-white text-7xl flex md:text-9xl'>{Math.round(weatherData.props.data.current.temp)}<span className='text-5xl'>°</span></h4>
-            <p className='text-sm text-slate-200 md:text-base'>{weatherData.props.data.daily[0].weather[0].main}</p>
+            {/* <h4 className='font-semibold text-white text-7xl flex md:text-9xl'>{Math.round(weatherData.props.data.current.temp)}<span className='text-5xl'>°</span></h4> */}
+            {/* <p className='text-sm text-slate-200 md:text-base'>{weatherData.props.data.daily[0].weather[0].main}</p> */}
           </div>
       </div>
 
