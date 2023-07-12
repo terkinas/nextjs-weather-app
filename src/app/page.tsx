@@ -78,8 +78,8 @@ export default async function Home() {
       { weatherData && <ClientConsoleLog weatherData={weatherData} /> }
       {/* weather representation */}
       <div className='flex flex-col px-4 sticky top-0 z-10'>
-          <div className='absolute text-9xl text-white'> {WeatherIcons[`${weatherData.props.data.daily[0].weather[0].main}`]} </div>
-          <Image className='animate-[floating_3s_ease-in-out_infinite]' src='/images/island-normal.png' width={400} height={400} alt='weather-image' />
+          {/* <div className='absolute text-9xl text-white'> {WeatherIcons[`${weatherData.props.data.daily[0].weather[0].main}`]} </div> */}
+          {/* <Image className='animate-[floating_3s_ease-in-out_infinite]' src='/images/island-normal.png' width={400} height={400} alt='weather-image' /> */}
           <div>
             {/* <h4 className='font-semibold text-white text-7xl flex md:text-9xl'>{Math.round(weatherData.props.data.current.temp)}<span className='text-5xl'>°</span></h4> */}
             <p className='text-sm text-slate-200 md:text-base'>{weatherData.props.data.daily[0].weather[0].main}</p>
