@@ -123,9 +123,9 @@ export default async function Home() {
                   <h4 className=''>{ weekDay.getDay() + index < 6 ? 
                   (index == 0 ? 'Today' : (index == 1 ? 'Tomorrow' : (weekDayNames[weekDay.getDay() + 2]) )) : (weekDayNames[weekDay.getDay() + index - 6])}</h4>
                   <h5 className='col-span-2 text-right'>{Math.round(weatherData.props.data.daily[index].temp.day)}<sup>°</sup></h5>
-                  <p>{WeatherIcons[`${weatherData.props.data.daily[index].weather[0].main}`]} {weatherData.props.data.daily[index].weather[0].main}</p>
+                  <p className='flex flex-col items-center text-sm'>{WeatherIcons[`${weatherData.props.data.daily[index].weather[0].main}`]} {weatherData.props.data.daily[index].weather[0].main}</p>
                 </div>
-            ))}
+          ))}
             </div>
 
             {/* fade out effect */}
