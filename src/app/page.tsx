@@ -6,6 +6,7 @@ import ClientConsoleLog from '@/components/client-console-log';
 import { FiUmbrella, FiChevronDown, FiWind, FiSun, FiDroplet, FiCloudSnow, FiCloud, FiCloudLightning, FiCloudRain } from 'react-icons/fi';
 import { RiCelsiusFill, RiFoggyLine } from 'react-icons/ri';
 import { isNumber } from '@/lib/utils';
+import React from 'react';
 
 const dataExample = [
   'feel',
@@ -53,14 +54,13 @@ const weatherNowIcons: any = [
 ]
 
 const WeatherIcons: any = {
-  Thunderstorm: <FiCloudLightning key="Thunderstorm" />,
-  Drizzle: <RiFoggyLine key="Drizzle" />,
-  Rain: <FiCloudRain key="Rain" />,
-  Snow: <FiCloudSnow key="Snow" />,
-  Clear: <FiSun key="Clear" />,
-  Clouds: <FiCloud key="Clouds" />,
-}
-
+  Thunderstorm: () => <FiCloudLightning />,
+  Drizzle: () => <RiFoggyLine />,
+  Rain: () => <FiCloudRain />,
+  Snow: () => <FiCloudSnow />,
+  Clear: () => <FiSun />,
+  Clouds: () => <FiCloud />,
+};
 // const weekDay = new Date();
 // const weekDayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 // const weekDayName = weekDayNames[weekDay.getDay()];
@@ -80,7 +80,7 @@ export default async function Home() {
       { weatherData && <ClientConsoleLog weatherData={weatherData} /> }
       {/* weather representation */}
       <div className='flex flex-col px-4 sticky top-0 z-10'>
-          <div className='absolute text-9xl text-white'> {WeatherIcons[`${weatherData.props.data.daily[0].weather[0].main}`]} </div>
+          <div className='absolute text-9xl text-white'> {React.createElement(WeatherIcons[weatherData.props.data.daily[0].weather[0].main])} </div>
           <Image className='animate-[floating_3s_ease-in-out_infinite]' src='/images/island-normal.png' width={400} height={400} alt='weather-image' />
           <div>
             {/* <h4 className='font-semibold text-white text-7xl flex md:text-9xl'>{Math.round(weatherData.props.data.current.temp)}<span className='text-5xl'>°</span></h4> */}
