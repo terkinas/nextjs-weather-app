@@ -118,14 +118,14 @@ export default async function Home() {
             <h5 className='text-base text-slate-400 flex items-center gap-1'>Weekly <FiChevronDown size={12} /></h5>
           </div>
           <div className="flex flex-col gap-3 w-full py-4 pt-5">
-            {dataExample.map((item, index) => (
+            {/* {dataExample.map((item, index) => (
               <div key={index} className={`grid grid-cols-4 gap-8 py-4 px-4 items-center border border-slate-100 rounded ${index == 0 ? 'font-semibold bg-slate-50' : ''}`}>
                   <h4 className=''>{ weekDay.getDay() + index < 6 ? 
                   (index == 0 ? 'Today' : (index == 1 ? 'Tomorrow' : (weekDayNames[weekDay.getDay() + 2]) )) : (weekDayNames[weekDay.getDay() + index - 6])}</h4>
                   <h5 className='col-span-2 text-right'>{Math.round(weatherData.props.data.daily[index].temp.day)}<sup>°</sup></h5>
                   <p className='flex flex-col items-center text-sm'>{WeatherIcons[`${weatherData.props.data.daily[index].weather[0].main}`]} {weatherData.props.data.daily[index].weather[0].main}</p>
                 </div>
-          ))}
+          ))} */}
             </div>
 
             {/* fade out effect */}
