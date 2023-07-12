@@ -70,6 +70,8 @@ export default async function Home() {
 
   // console.log(data);
   // console.log(process.env.OPEN_WEATHER_API_KEY)
+  if(!weatherData) return <div>loading...</div>
+  
   return (
     <main className="flex flex-col items-center justify-between pt-12 z-0
     md:grid md:grid-cols-3 max-w-7xl mx-auto">
@@ -78,7 +80,7 @@ export default async function Home() {
       { weatherData && <ClientConsoleLog weatherData={weatherData} /> }
       {/* weather representation */}
       <div className='flex flex-col px-4 sticky top-0 z-10'>
-          {/* <div className='absolute text-9xl text-white'> {WeatherIcons[`${weatherData.props.data.daily[0].weather[0].main}`]} </div> */}
+          <div className='absolute text-9xl text-white'> {WeatherIcons[`${weatherData.props.data.daily[0].weather[0].main}`]} </div>
           {/* <Image className='animate-[floating_3s_ease-in-out_infinite]' src='/images/island-normal.png' width={400} height={400} alt='weather-image' /> */}
           <div>
             {/* <h4 className='font-semibold text-white text-7xl flex md:text-9xl'>{Math.round(weatherData.props.data.current.temp)}<span className='text-5xl'>°</span></h4> */}
