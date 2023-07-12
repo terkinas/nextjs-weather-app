@@ -7,59 +7,59 @@ import { FiUmbrella, FiChevronDown, FiWind, FiSun, FiDroplet, FiCloudSnow, FiClo
 import { RiCelsiusFill, RiFoggyLine } from 'react-icons/ri';
 import { isNumber } from '@/lib/utils';
 
-// const dataExample = [
-//   'feel',
-//   'humidity',
-//   'pressure',
-//   'temp',
-//   'temp_max',
-//   'temp_min',
-// ]
+const dataExample = [
+  'feel',
+  'humidity',
+  'pressure',
+  'temp',
+  'temp_max',
+  'temp_min',
+]
 
-// const weatherNow = [
-//   'Feel like',
-//   'Wind',
-//   'Precipitation',
-//   'Humidity',
-//   'Chance of rain',
-//   'UV Index',
-// ]
+const weatherNow = [
+  'Feel like',
+  'Wind',
+  'Precipitation',
+  'Humidity',
+  'Chance of rain',
+  'UV Index',
+]
 
-// const weatherNowData = [
-//   'feels_like',
-//   'wind_speed',
-//   'dew_point',
-//   'humidity',
-//   'clouds',
-//   'uvi'
-// ]
+const weatherNowData = [
+  'feels_like',
+  'wind_speed',
+  'dew_point',
+  'humidity',
+  'clouds',
+  'uvi'
+]
 
-// const weatherNowSymbols = [
-//   '°',
-//   ' km/h',
-//   '%',
-//   '%',
-//   '%',
-//   '/10'
-// ]
+const weatherNowSymbols = [
+  '°',
+  ' km/h',
+  '%',
+  '%',
+  '%',
+  '/10'
+]
 
-// const weatherNowIcons: any = [
-//   {key: 1, icon: <RiCelsiusFill />},
-//   {key: 2, icon: <FiWind />},
-//   {key: 3, icon: <FiUmbrella />},
-//   {key: 4, icon: <FiDroplet />},
-//   {key: 5, icon: <FiCloudRain />},
-//   {key: 6, icon: <FiSun />},
-// ]
+const weatherNowIcons: any = [
+  {key: 1, icon: <RiCelsiusFill />},
+  {key: 2, icon: <FiWind />},
+  {key: 3, icon: <FiUmbrella />},
+  {key: 4, icon: <FiDroplet />},
+  {key: 5, icon: <FiCloudRain />},
+  {key: 6, icon: <FiSun />},
+]
 
-// const WeatherIcons: any = {
-//   Thunderstorm: <FiCloudLightning />,
-//   Drizzle: <RiFoggyLine />,
-//   Rain: <FiCloudRain />,
-//   Snow: <FiCloudSnow />,
-//   Clear: <FiSun />,
-//   Clouds: <FiCloud />,
-// }
+const WeatherIcons: any = {
+  Thunderstorm: <FiCloudLightning />,
+  Drizzle: <RiFoggyLine />,
+  Rain: <FiCloudRain />,
+  Snow: <FiCloudSnow />,
+  Clear: <FiSun />,
+  Clouds: <FiCloud />,
+}
 
 // const weekDay = new Date();
 // const weekDayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
