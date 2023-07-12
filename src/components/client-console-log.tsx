@@ -1,13 +1,13 @@
 "use client"
 
 type Props = {
-    data: any
+  weatherData: any
 }
 
-function ClientConsoleLog(data: Props) {
-    console.log(data)
+function ClientConsoleLog(weatherData: Props) {
+    console.log(weatherData)
   return (
-    <div>client-console-log</div>
+    <></>
   )
 }
 

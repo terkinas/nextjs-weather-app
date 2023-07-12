@@ -1,8 +1,11 @@
+
+
 import Image from 'next/image'
 import getCurrentWeather from '@/lib/getCurrentWeather';
 import ClientConsoleLog from '@/components/client-console-log';
-import { FiUmbrella, FiChevronDown } from 'react-icons/fi';
-import { RiCelsiusLine } from 'react-icons/ri';
+import { FiUmbrella, FiChevronDown, FiWind, FiSun, FiDroplet, FiCloudRain } from 'react-icons/fi';
+import { RiCelsiusLine, RiCelsiusFill } from 'react-icons/ri';
+import { isNumber } from '@/lib/utils';
 
 const dataExample = [
   'feel',
@@ -13,19 +16,63 @@ const dataExample = [
   'temp_min',
 ]
 
-export default function Home() {
-  // const data = getCurrentWeather();
+const weatherNow = [
+  'Feel like',
+  'Wind',
+  'Precipitation',
+  'Humidity',
+  'Chance of rain',
+  'UV Index',
+]
+
+const weatherNowData = [
+  'feels_like',
+  'wind_speed',
+  'dew_point',
+  'humidity',
+  'clouds',
+  'uvi'
+]
+
+const weatherNowSymbols = [
+  '°',
+  ' km/h',
+  '%',
+  '%',
+  '%',
+  '/10'
+]
+
+const weatherNowIcons = [
+  <RiCelsiusFill />,
+  <FiWind />,
+  <FiUmbrella />,
+  <FiDroplet />,
+  <FiCloudRain />,
+  <FiSun />,
+]
+
+const weekDay = new Date();
+const weekDayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const weekDayName = weekDayNames[weekDay.getDay()];
+
+export default async function Home() {
+  const weatherData = await getCurrentWeather();
+
   // console.log(data);
-  console.log(process.env.OPEN_WEATHER_API_KEY)
+  // console.log(process.env.OPEN_WEATHER_API_KEY)
   return (
     <main className="flex flex-col items-center justify-between pt-12 z-0
     md:grid md:grid-cols-3 max-w-7xl mx-auto">
+
+      {/*  */}
+      { weatherData && <ClientConsoleLog weatherData={weatherData} /> }
       {/* weather representation */}
       <div className='flex flex-col px-4 sticky top-0 z-10 '>
-          <Image src='/images/island-normal.png' width={400} height={400} alt='weather-image' />
+          <Image className='animate-[floating_3s_ease-in-out_infinite]' src='/images/island-normal.png' width={400} height={400} alt='weather-image' />
           <div>
-            <h4 className='font-semibold text-white text-7xl flex md:text-9xl'>32<span className='text-5xl'>°</span></h4>
-            <p className='text-sm text-slate-200 md:text-base'>Rainy</p>
+            <h4 className='font-semibold text-white text-7xl flex md:text-9xl'>{Math.round(weatherData.props.data.current.temp)}<span className='text-5xl'>°</span></h4>
+            <p className='text-sm text-slate-200 md:text-base'>{weatherData.props.data.daily[0].weather[0].main}</p>
           </div>
       </div>
 
@@ -42,10 +89,10 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-6 w-full py-4 pt-5">
             {dataExample.map((item, index) => (
               <div key={index} className="flex gap-2 items-center">
-                <span className='block p-3 bg-slate-100 rounded-full text-slate-800 whitespace-nowrap'><FiUmbrella /></span>
+                <span className='block p-3 bg-slate-100 rounded-full text-slate-800 whitespace-nowrap'>{weatherNowIcons[index]}</span>
                   <div className='h-full flex flex-col justify-evenly'>
-                    <h4 className='block text-xs text-slate-400'>titledsadasdas</h4>
-                    <p className='font-semibold flex text-slate-700'>16°</p>
+                    <h4 className='block text-xs text-slate-400'>{weatherNow[index]}</h4>
+                    <p className='font-semibold flex text-slate-700'>{ isNumber(weatherData.props.data.current[weatherNowData[index]]) ? Math.round(weatherData.props.data.current[weatherNowData[index]]) : weatherData.props.data.current[weatherNowData[index]]}{weatherNowSymbols[index]}</p>
                   </div>
                 </div>
             ))}
@@ -63,9 +110,10 @@ export default function Home() {
           <div className="flex flex-col gap-3 w-full py-4 pt-5">
             {dataExample.map((item, index) => (
               <div key={index} className={`grid grid-cols-4 gap-8 py-4 px-4 items-center border border-slate-100 rounded ${index == 0 ? 'font-semibold bg-slate-50' : ''}`}>
-                  <h4 className=''>Today</h4>
-                  <h5 className='col-span-2 text-right'>16°</h5>
-                  <p>Cloudy</p>
+                  <h4 className=''>{ weekDay.getDay() + index < 6 ? 
+                  (index == 0 ? 'Today' : (index == 1 ? 'Tomorrow' : (weekDayNames[weekDay.getDay() + 2]) )) : (weekDayNames[weekDay.getDay() + index - 6])}</h4>
+                  <h5 className='col-span-2 text-right'>{Math.round(weatherData.props.data.daily[index].temp.day)}<sup>°</sup></h5>
+                  <p>{weatherData.props.data.daily[index].weather[0].main}</p>
                 </div>
             ))}
             </div>
