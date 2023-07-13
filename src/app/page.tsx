@@ -53,14 +53,14 @@ const weatherNowIcons: any = [
   {key: 6, icon: <FiSun />},
 ]
 
-const WeatherIcons: any = {
-  Thunderstorm: () => <FiCloudLightning />,
-  Drizzle: () => <RiFoggyLine />,
-  Rain: () => <FiCloudRain />,
-  Snow: () => <FiCloudSnow />,
-  Clear: () => <FiSun />,
-  Clouds: () => <FiCloud />,
-};
+// const WeatherIcons: any = {
+//   Thunderstorm: () => <FiCloudLightning />,
+//   Drizzle: () => <RiFoggyLine />,
+//   Rain: () => <FiCloudRain />,
+//   Snow: () => <FiCloudSnow />,
+//   Clear: () => <FiSun />,
+//   Clouds: () => <FiCloud />,
+// };
 // const weekDay = new Date();
 // const weekDayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 // const weekDayName = weekDayNames[weekDay.getDay()];
@@ -80,7 +80,7 @@ export default async function Home() {
       { weatherData && <ClientConsoleLog weatherData={weatherData} /> }
       {/* weather representation */}
       <div className='flex flex-col px-4 sticky top-0 z-10'>
-          <div className='absolute text-9xl text-white'> {React.createElement(WeatherIcons[weatherData.props.data.daily[0].weather[0].main])} </div>
+          {/* <div className='absolute text-9xl text-white'> {React.createElement(WeatherIcons[weatherData.props.data.daily[0].weather[0].main])} </div> */}
           <Image className='animate-[floating_3s_ease-in-out_infinite]' src='/images/island-normal.png' width={400} height={400} alt='weather-image' />
           <div>
             {/* <h4 className='font-semibold text-white text-7xl flex md:text-9xl'>{Math.round(weatherData.props.data.current.temp)}<span className='text-5xl'>°</span></h4> */}
@@ -99,7 +99,7 @@ export default async function Home() {
         <div className="w-full text-slate-800 px-4 md:bg-white md:p-4 md:rounded-lg md:shadow-lg">
           <h4 className='font-semibold text-lg px-2'>Weather now</h4>
           <div className="grid grid-cols-2 gap-6 w-full py-4 pt-5">
-            {/* {dataExample.map((item, index) => (
+            {dataExample.map((item, index) => (
               <div key={index} className="flex gap-2 items-center">
                 <span className='block p-3 bg-slate-100 rounded-full text-slate-800 whitespace-nowrap'>{weatherNowIcons[index].icon}</span>
                   <div className='h-full flex flex-col justify-evenly'>
@@ -107,7 +107,7 @@ export default async function Home() {
                     <p className='font-semibold flex text-slate-700'>{ isNumber(weatherData.props.data.current[weatherNowData[index]]) ? Math.round(weatherData.props.data.current[weatherNowData[index]]) : weatherData.props.data.current[weatherNowData[index]]}{weatherNowSymbols[index]}</p>
                   </div>
                 </div>
-            ))} */}
+            ))}
           </div>
         </div>
 
