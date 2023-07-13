@@ -53,7 +53,16 @@ const weatherNowIcons: any = [
   {key: 6, icon: <FiSun />},
 ]
 
-// const WeatherIcons: any = {
+const WeatherIcons: any = {
+  Thunderstorm: <FiCloudLightning />,
+  Drizzle: <RiFoggyLine />,
+  Rain: <FiCloudRain />,
+  Snow: <FiCloudSnow />,
+  Clear: <FiSun />,
+  Clouds: <FiCloud />,
+}
+
+// const oWeatherIcons: any = {
 //   Thunderstorm: () => <FiCloudLightning />,
 //   Drizzle: () => <RiFoggyLine />,
 //   Rain: () => <FiCloudRain />,
@@ -125,7 +134,7 @@ export default async function Home() {
                   <h4 className=''>{ weekDay.getDay() + index < 6 ? 
                   (index == 0 ? 'Today' : (index == 1 ? 'Tomorrow' : (weekDayNames[weekDay.getDay() + 2]) )) : (weekDayNames[weekDay.getDay() + index - 6])}</h4>
                   <h5 className='col-span-2 text-right'>{Math.round(weatherData.props.data.daily[index].temp.day)}<sup>°</sup></h5>
-                  {/* <p className='flex flex-col items-center text-sm'>{WeatherIcons[`${weatherData.props.data.daily[index].weather[0].main}`]} {weatherData.props.data.daily[index].weather[0].main}</p> */}
+                  <p className='flex flex-col items-center text-sm'>{WeatherIcons[`${weatherData.props.data.daily[index].weather[0].main}`]} {weatherData.props.data.daily[index].weather[0].main}</p>
                 </div>
           ))}
             </div>
