@@ -101,7 +101,7 @@ export default async function Home() {
           <div className="grid grid-cols-2 gap-6 w-full py-4 pt-5">
             {dataExample.map((item, index) => (
               <div key={index} className="flex gap-2 items-center">
-                {/* <span className='block p-3 bg-slate-100 rounded-full text-slate-800 whitespace-nowrap'>{weatherNowIcons[index].icon}</span> */}
+                <span className='block p-3 bg-slate-100 rounded-full text-slate-800 whitespace-nowrap'>{weatherNowIcons[index].icon}</span>
                   <div className='h-full flex flex-col justify-evenly'>
                     <h4 className='block text-xs text-slate-400'>{weatherNow[index]}</h4>
                     <p className='font-semibold flex text-slate-700'>{ isNumber(weatherData.props.data.current[weatherNowData[index]]) ? Math.round(weatherData.props.data.current[weatherNowData[index]]) : weatherData.props.data.current[weatherNowData[index]]}{weatherNowSymbols[index]}</p>
